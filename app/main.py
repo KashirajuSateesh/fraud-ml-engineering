@@ -49,6 +49,7 @@ def predict(req: PredictRequest):
     }
     with open(LOG_PATH, "a") as f:
         f.write(json.dumps(log_record)+"\n")
+    print("PREDICTION_LOG:", json.dumps(log_record))
 
     return {
         "fraud_probability": proba,
